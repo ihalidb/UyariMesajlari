@@ -24,62 +24,23 @@ class ViewController: UIViewController {
         
         if emailTextField.text == "" {
             //emailini girilmedi
-            
-            let uyariMesaji = UIAlertController(title: "Hata Mesajı!", message: "Email Yanlış Verildi!", preferredStyle: UIAlertController.Style.alert)
-            
-            let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { UIAlertAction in
-                // Ok Butonuna tıklanınca olacaklar
-                print("Ok butonuna tıklandı!")
-            }
-            
-            uyariMesaji.addAction(okButton)
-            
-            self.present(uyariMesaji, animated: true, completion: nil)
-            
+            alertOlustur(titleGirdisi: "Hata!", messageGirdisi: "Email Eksik")
         } else if passwordTextField.text == "" {
             //parola girilmedi
-            
-            let uyariMesaji = UIAlertController(title: "Hata Mesajı!", message: "Parola girilmedi!", preferredStyle: UIAlertController.Style.alert)
-            
-            let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { UIAlertAction in
-                // Ok Butonuna tıklanınca olacaklar
-                print("Ok butonuna tıklandı!")
-            }
-            
-            uyariMesaji.addAction(okButton)
-            
-            self.present(uyariMesaji, animated: true, completion: nil)
-            
+            alertOlustur(titleGirdisi: "Hata!", messageGirdisi: "Parola Eksik!")
         } else if passwordTextField.text != password2TextField.text {
             //Parolalar uyuşmuyor
-            
-            let uyariMesaji = UIAlertController(title: "Hata Mesajı!", message: "Parolalar uyuşmuyor!", preferredStyle: UIAlertController.Style.alert)
-            
-            let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { UIAlertAction in
-                // Ok Butonuna tıklanınca olacaklar
-                print("Ok butonuna tıklandı!")
-            }
-            
-            uyariMesaji.addAction(okButton)
-            
-            self.present(uyariMesaji, animated: true, completion: nil)
-            
+            alertOlustur(titleGirdisi: "Hata!", messageGirdisi: "Parolalar Uyuşmuyor!")
         } else {
             //Kayıt başarılı
-            let uyariMesaji = UIAlertController(title: "Başarılı!", message: "Kayıt Başarılı!", preferredStyle: UIAlertController.Style.alert)
-            
-            let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { UIAlertAction in
-                // Ok Butonuna tıklanınca olacaklar
-                print("Ok butonuna tıklandı!")
-            }
-            
-            uyariMesaji.addAction(okButton)
-            
-            self.present(uyariMesaji, animated: true, completion: nil)
+            alertOlustur(titleGirdisi: "Tebrikler!", messageGirdisi: "Kullanıcı Oluşturuldu!")
         }
         
+    }
+    
+    func alertOlustur(titleGirdisi: String, messageGirdisi: String){
         
-        let uyariMesaji = UIAlertController(title: "Hata Mesajı!", message: "Email Yanlış Verildi!", preferredStyle: UIAlertController.Style.alert)
+        let uyariMesaji = UIAlertController(title: titleGirdisi, message: messageGirdisi, preferredStyle: UIAlertController.Style.alert)
         
         let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { UIAlertAction in
             // Ok Butonuna tıklanınca olacaklar
@@ -89,7 +50,6 @@ class ViewController: UIViewController {
         uyariMesaji.addAction(okButton)
         
         self.present(uyariMesaji, animated: true, completion: nil)
-        
         
     }
     
